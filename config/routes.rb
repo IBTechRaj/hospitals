@@ -5,4 +5,6 @@ Rails.application.routes.draw do
                  registrations: 'users/registrations'
              }
   get '/tester-data', to: 'testers#show'
+  root 'contacts#index'
+  resources :contacts
 end

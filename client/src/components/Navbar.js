@@ -13,7 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 
-const qs = require('query-string');
+// const qs = require('query-string');
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -124,16 +124,16 @@ const Navbar = ({ loggedIn, setLoggedIn }) => {
     event.preventDefault();
     console.log('logging')
     try {
-      const res = await axios.post('http://localhost:3001/users/sign_in ', loginData);
-      const { token, user } = res.data;
-      console.log('res', res);
-      setLoggedIn(true);
-      onCloseLoginModal()
+      const res = await axios.post('http://localhost:3001/users/sign_in',  loginData );
+      const  token = res.data;
+      console.log('token', token);
+      
+      
       if (token) {
         setLoggedIn(true);
         onCloseLoginModal()
         localStorage.setItem('token', token);
-        console.log('jwt: ', token)
+        
       }
     }
     catch (error) {

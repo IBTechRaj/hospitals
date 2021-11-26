@@ -1,0 +1,22 @@
+<h1>New Contact</h1>
+<%= form_for @contact, url: {action: "create"} do |f| %>
+  <div>
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+  </div>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </div>
+  <div>
+    <%= f.submit "submit" %>
+  </div>
+<% end %>
